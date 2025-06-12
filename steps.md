@@ -19,10 +19,18 @@ chmod +x argocd
 
 
 ###INSTALL HELM:
+```sh
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+```
+```sh
 chmod 700 get_helm.sh
+```
+```sh
 ./get_helm.sh
+```
+```sh
 helm version
+```
 
 ##INSTALL ARGO CD USING HELM
 kubectl create namespace argocd
