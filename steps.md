@@ -33,18 +33,34 @@ helm version
 ```
 
 ##INSTALL ARGO CD USING HELM
+```sh
 kubectl create namespace argocd
+```
+```sh
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+```sh
 kubectl get all -n argocd
+```
 
 
 
 ##EXPOSE ARGOCD SERVER:
+```sh
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+```
+```sh
 yum install jq -y
+```
+```sh
 export ARGOCD_SERVER='kubectl get svc argocd-server -n argocd -o json | jq --raw-output '.status.loadBalancer.ingress[0].hostname''
+```
+```sh
 echo $ARGOCD_SERVER
+```
+```sh
 kubectl get svc argocd-server -n argocd -o json | jq --raw-output .status.loadBalancer.ingress[0].hostname
+```
 ##The above command will provide load balancer URL to access ARGO CD
 
 
