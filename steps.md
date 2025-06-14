@@ -48,7 +48,7 @@ kubectl get all -n argocd
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 ```
 ```sh
-yum install jq -y
+sudo apt install jq -y
 ```
 ```sh
 export ARGOCD_SERVER='kubectl get svc argocd-server -n argocd -o json | jq --raw-output '.status.loadBalancer.ingress[0].hostname''
