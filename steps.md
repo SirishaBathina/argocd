@@ -73,3 +73,5 @@ echo $ARGO_PWD
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
 ##The above command to provide password to access argo cd
+
+username admin
